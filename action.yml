@@ -1,7 +1,7 @@
 
 name: 4 Letter Fails
+description: This GitHub Action checks your README.md for profanity and fails if any is found
 author: Ben Minerds (puzzleduck@gmail.com)
-description: This GitHub Action checks your README.md for profanity (using profanityfilter: https://github.com/areebbeigh/profanityfilter) and fails if any is found
 branding:
   icon: 'mic-off'  
   color: 'purple'

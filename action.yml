@@ -1,0 +1,19 @@
+
+name: 4 Letter Fails
+author: Ben Minerds (puzzleduck@gmail.com)
+description: This GitHub Action checks your README.md for profanity (using profanityfilter: https://github.com/areebbeigh/profanityfilter) and fails if any is found
+branding:
+  icon: 'mic-off'  
+  color: 'purple'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Setup profanityfilter
+      run: pip3 install profanityfilter
+    - name: Run profanityfilter
+      run: if [[ `profanityfilter -f README.md` == *"This text is not clean"* ]] ; then exit 1 ; else exit 0 ; fi
